@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s.imgur.com/images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="./../dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/animation.css" />
+    <script src="./scripts/modules/animation.js" async></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script type="module" src="./main.js" defer></script>
+    <script src="./scripts/dropdowns.js" defer></script>
+    <!-- <script src="./scripts/fetchRequests.js" defer></script> -->
+    <title>Imgur: The magic of the Internet</title>
+  </head>
+
+  <body class="bg-gray-800">
+
+    <!-- ANIMATION -->
+    <section
+      class="animation-div w-screen h-screen flex justify-center items-start md:items-center absolute top-0 left-0 z-50"
+    >
+      <div
+        class="imgur-div w-1/2 h-1/2 flex justify-center items-center overflow-visible"
+      ></div>
+    </section>
+
+    <!-- MODAL -->
+    <section
+      class="overlay w-full h-screen py-4 sm:py-0s px-4 sm:px-[7.5%] lg:px-[20%] bg-overlay absolute top-0 z-50 flex-col gap-2 items-center justify-center hidden"
+      id="modal"
+    ></section>
+
+    <!-- HEADER -->
+    <header
+      class="header flex w-full h-auto py-4 px-2 sm:px-4 justify-between sticky top-0 left-0 z-20"
+      id="header"
+    >
+      <a href="./" class="logoImg absolute hidden">
+        <img
+          src="https://s.imgur.com/images/favicon-32x32.png"
+          alt=""
+          class=""
+        />
+      </a>
+    </header>
+
+    <!-- TAG CONTAINER -->
+    <section
+      class="header-container bg-bgColor flex flex-col justify-center items-center gap-y-4 h-auto absolute top-0 w-full py-20"
+    >
+      <h1 class="text-center font-semibold text-2xl">
+        Is it memes you're looking for?
+      </h1>
+      <section
+        class="tag-container w-11/12 px-2 sm:w-11/12 sm:pl-20 sm:pr-16 h-full overflow-hidden flex flex-col relative z-10"
+      >
+        <div class="flex flex-col gap-6 pb-10 w-full self-center sm:mr-4">
+          <div class="flex justify-between text-white self-center w-full">
+            <h2 class="explore font-semibold text-gray-200 text-base">
+              EXPLORE TAGS
+            </h2>
+            <button
+              class="tag-btn font-semibold text-gray-200 text-base"
+              id="moreTags"
+            >
+              MORE TAGS +
+            </button>
+            <button
+              class="tag-btn font-semibold hidden text-gray-200 text-base"
+              id="lessTags"
+            >
+              LESS TAGS x
+            </button>
+          </div>
+          <div
+            class="w-full h-[160px] pt-1 flex flex-wrap gap-y-4 sm:px-[5%] md:px-0 gap-10 md:gap-4 justify-center lg:px-0 xl:justify-between xl:gap-x-2 overflow-hidden"
+            id="tags"
+          ></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- MAIN -->
+    <main class="relative top-64">
+      <nav
+        class="floating-nav flex w-10/12 mx-auto sm:gap-4 h-auto py-4 justify-between items-center sticky top-0 left-0 px-4 lg:px-0"
+      >
+        <div
+          class="w-full flex justify-end sm:justify-between items-center px-4 sm:px-0"
+        >
+          <div class="custom-select hidden sm:flex">
+            <select>
+              <option value="0">MOST VIRAL</option>
+              <option value="1">MOST VIRAL</option>
+              <option value="2">USER SUBMITTED</option>
+              <option value="3">HIGHEST SCORING</option>
+            </select>
+          </div>
+          <form
+            class="floating-search h-10 items-center sm:w-2/6 md:w-5/12 relative left-8 z-50 hidden lg:visible"
+          >
+            <input
+              type="search"
+              placeholder="Images, #tags, @users oh my!"
+              class="w-full h-full px-2 bg-searchBar text-white placeholder-inputTextColor rounded-sm"
+            />
+            <button
+              type="submit"
+              class="text-white h-full px-2 flex items-center absolute right-0"
+            >
+              <span class="material-symbols-outlined"> search </span>
+            </button>
+          </form>
+          <div
+            class="w-auto flex gap-1 sm:gap-4 justify-between items-center mr-2"
+          >
+            <div class="custom-select invisible sm:visible">
+              <select>
+                <option value="0">NEWEST</option>
+                <option value="1">POPULAR</option>
+                <option value="2">NEWEST</option>
+                <option value="3">BEST</option>
+                <option value="4">RANDOM</option>
+              </select>
+            </div>
+            <button class="">
+              <span
+                class="filter material-symbols-rounded text-gray-200 hover:text-white text-2xl relative"
+              >
+                filter_list
+              </span>
+            </button>
+            <button class="">
+              <div id="autoplay">
+                <span
+                  class="play material-symbols-rounded text-gray-200 hover:text-white text-2xl hidden relative"
+                  id="enable-autoplay-btn"
+                >
+                  smart_display
+                </span>
+                <span
+                  class="pause material-symbols-rounded text-gray-200 hover:text-white text-2xl relative"
+                  id="disable-autoplay-btn"
+                >
+                  pause_presentation
+                </span>
+              </div>
+            </button>
+            <button
+              class="flex flex-wrap justify-around"
+              id="change-layout-btn"
+            >
+              <span
+                class="uniform material-symbols-rounded text-gray-200 hover:text-white text-2xl relative"
+              >
+                grid_view
+              </span>
+              <span
+                class="waterfall material-symbols-rounded text-gray-200 hover:text-white text-2xl hidden relative"
+              >
+                dashboard
+              </span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- GALLERY -->
+      <div
+        class="dense-grid gallery relative overflow-hidden"
+        id="posts-container"
+      ></div>
+
+      <!-- LOADER -->
+      <div class="spinner-box relative top-28" id="spinner">
+        <div class="circle-border">
+          <div class="circle-core"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer w-full relative pl-6 sm:pl-[50px]"></footer>
+
+    <!-- SCROLL TO TOP -->
+    <div class="hidden sm:block">
+      <button id="scroll-btn" class="scroll-btn z-10"></button>
+    </div>
+
+    <script src="./scripts/footer.js"></script>
+  </body>
+</html>
