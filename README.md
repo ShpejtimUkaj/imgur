@@ -41,7 +41,7 @@
 1. Clone the repository to your local machine:
 
 ```
-$ git clone https://github.com/timchee/imgur
+$ git clone https://github.com/timchee0/imgur
 ```
 
 2. Install the required dependencies:
@@ -59,7 +59,7 @@ $ npm run dev
 <ul>
 
  <li>
-  <a href="https://github.com/timchee">Shpejtim Ukaj</a>
+  <a href="https://github.com/timchee0">Shpejtim Ukaj</a>
  </li>
 </ul>
 
