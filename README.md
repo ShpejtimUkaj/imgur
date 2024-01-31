@@ -59,7 +59,7 @@ $ npm run dev
 <ul>
 
  <li>
-  <a href="https://github.com/timchee0">Shpejtim Ukaj</a>
+  <a href="https://github.com/ShpejtimUkaj">Shpejtim Ukaj</a>
  </li>
 </ul>
 
