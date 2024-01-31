@@ -1,8 +1,5 @@
 <h1 align="center">Imgur API Project</h1>
-<h3 align="center">Frontend Project for LIFE from Gjirafa</h3>
-
-<h3 align="left">Website link</h3>
-<a href="https://imgur-gjirafa.netlify.app/">https://imgur-gjirafa.netlify.app/</a>
+<h3 align="center">Frontend Project</h3>
 
 <h3 align="left">Project description</h3>
 
@@ -60,17 +57,9 @@ $ npm run dev
 
 <h3 align="left">Contributors</h3>
 <ul>
- <li>
-  <a href="https://github.com/ermiraveliu">Ermira Veliu</a>
- </li>
+
  <li>
   <a href="https://github.com/timchee">Shpejtim Ukaj</a>
- </li>
- <li>
-  <a href="https://github.com/WaveBrave02">Valtrim Fetahu</a>
- </li>
- <li>
-  <a href="https://github.com/vjendita-pllana">Vjendita Pllana</a>
  </li>
 </ul>
 
